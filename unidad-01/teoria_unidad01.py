@@ -12,7 +12,7 @@ computadora las ejecute. Antes de empezar a escribir el código siempre tenemos 
 
 Existen dos tipos de lenguaje de programación: los de alto nivel y los de bajo nivel.
 Los lenguajes de alto nivel están basados en el lenguaje humano y son más fáciles de entender para las personas. 
-En cambio, los lenguajes de bajo nivel son más cercanos al lenguaje de la máquina, por lo tanto son más complejos 
+En cambio, los lenguajes de bajo nivel son más cercanos al lenguaje de la máquina, por lo tanto, son más complejos 
 de escribir y difíciles de entender para las personas.
 
 
