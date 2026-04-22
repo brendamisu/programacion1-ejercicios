@@ -53,6 +53,9 @@ numero_1 = input("Ingrese un número entero: ")
 numero_2 = input("Ingrese otro número entero: ")
 division = float(numero_1) / float(numero_2)
 print(f"La división de ambos números es igual a: {division}")
+# ATENCIÓN: Si el usuario ingresa 0 en el segundo número, se produce ZeroDivisionError.
+# Ya que en la unidad se ven los condicionales (ver ejercicio 11), podrías validarlo con
+# un if float(numero_2) != 0 para hacer el programa más robusto.
 
 
 # 4. Pide al usuario que ingrese una cadena que represente un número entero. Convierte esta cadena a un entero usando la función int() y luego suma 10. Imprime el resultado.
@@ -161,6 +164,8 @@ if num_2 == 0:
 else:
     division = num_1 / num_2
     print(f"El resultado de la división es {division}")
+# ¡MUY BIEN! Acá sí manejaste correctamente el caso de división por cero.
+# Es exactamente la validación que faltó en el ejercicio 3.
 
 
 # 12. Calculador de IMC
@@ -208,6 +213,9 @@ else:
         print("Pista: el número correcto es mayor.")
     else:
         print("Pista: el número correcto es menor.")
+# ¡Muy bien el uso de if anidado! La lógica es clara y está correcta.
+# Pequeño detalle: la consigna sugería el 7 como ejemplo, vos usaste 8. Es válido,
+# el ejercicio pedía "por ejemplo, 7", así que cualquier número del 1 al 10 está bien.
 
 
 """
@@ -243,6 +251,25 @@ if entrada.isdigit():
     print("El dato representa un número entero")
 else:
     print("El dato no representa un número entero")
+# ⚠️ EJERCICIO INCOMPLETO: La consigna pedía distinguir entre:
+#   - Entero positivo
+#   - Entero negativo (primer carácter '-')
+#   - Flotante positivo (contiene un punto)
+#   - Flotante negativo (empieza con '-' y contiene un punto)
+#   - Cadena de texto
+# Tu solución sólo detecta enteros positivos. Te dejo una propuesta para completarlo:
+#
+# entrada = input("Ingrese un dato: ")
+# if entrada.isdigit():
+#     print("El dato representa un número entero")
+# elif entrada[0] == "-" and entrada[1:].isdigit():
+#     print("El dato representa un número entero negativo")
+# elif entrada.count(".") == 1 and entrada.replace(".", "").isdigit():
+#     print("El dato representa un número flotante")
+# elif entrada[0] == "-" and entrada.count(".") == 1 and entrada[1:].replace(".", "").isdigit():
+#     print("El dato representa un número flotante negativo")
+# else:
+#     print("El dato representa una cadena de texto")
 
 
 # 16. Calculador de calificaciones
@@ -265,3 +292,29 @@ else:
 nombre = input("Ingrese su nombre: ")
 color_favorito = input("Ingrese su color favorito: ")
 print("Hola " + nombre + ", tu color favorito es " + color_favorito)
+# ¡Muy bien! La concatenación con + funciona perfecto.
+# Como alternativa más moderna y legible podrías usar f-strings (como ya lo hiciste en el ej. 1):
+#   print(f"Hola {nombre}, tu color favorito es {color_favorito}")
+
+
+# ============================================================
+# ¡EXCELENTE TRABAJO, BRENDA! 🎉🌟
+# ============================================================
+# La práctica de la Unidad 3 está muy completa y prolija. Se destaca:
+#
+#   ✔ Dominás los condicionales (if / elif / else), incluso anidados (ej. 14).
+#   ✔ Usás correctamente f-strings para formatear cadenas (ej. 1, 3, 11, 12, 13).
+#   ✔ Resolviste muy bien las figuras geométricas usando replicación de strings (ej. 2).
+#   ✔ Manejaste la división por cero en la calculadora (ej. 11) 👏.
+#   ✔ El IMC (ej. 12) está resuelto con una escala completa y realista.
+#   ✔ La conversión de tipos (int, float) la aplicás sin problemas.
+#
+# Puntos a mejorar para seguir creciendo:
+#   • El ejercicio 15 quedó incompleto: te faltó contemplar enteros negativos,
+#     flotantes y texto. Te dejé una propuesta de solución en los comentarios.
+#   • En el ejercicio 3 convendría validar que el divisor no sea cero
+#     (tal como hiciste muy bien en el 11).
+#
+# En conjunto: ¡un trabajo MUY sólido! Se nota el esfuerzo y la dedicación.
+# Seguí así que vas por muy buen camino. 💪✨
+# ============================================================
