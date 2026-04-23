@@ -1,3 +1,6 @@
+from math import pi
+# Importo pi del módulo math para usarlo en el ejercicio 4.
+
 # 1. Calcula el área de un rectángulo con base 5 y altura 3. Imprime el resultado.
 base = 5
 altura = 3
@@ -5,14 +8,14 @@ area_rectangulo = base * altura
 print("El área del rectángulo es:", area_rectangulo)
 
 # 2. Convierte la temperatura de Celsius a Fahrenheit. Pide al usuario ingresar la temperatura en Celsius y luego imprime la temperatura equivalente en Fahrenheit.
-Celsius = float(input("Ingrese la temperatura en Celsius: "))
-Fahrenheit = (Celsius * 1.8) + 32
-print("La temperatura en Fahrenheit es:", Fahrenheit)
+celsius = float(input("Ingrese la temperatura en Celsius: "))
+fahrenheit = (celsius * 1.8) + 32
+print("La temperatura en Fahrenheit es:", fahrenheit)
 # CORRECCIÓN: Por convención en Python (PEP 8), los nombres de variables deben ir en minúsculas.
 # Lo correcto sería usar "celsius" y "fahrenheit". Las mayúsculas iniciales se reservan para clases.
 
 # 3. Concatena tu nombre y tu edad como strings y guárdalos en una variable. Luego imprime el tipo de dato de esa variable.
-nombre_edad = "Brenda" + "20"
+nombre_edad = "Brenda" + str(20)
 print(type(nombre_edad))
 # El tipo de dato de la variable es un string.
 # OBSERVACIÓN: El ejercicio funciona, pero sería más realista tener la edad como número (int)
@@ -21,7 +24,7 @@ print(type(nombre_edad))
 
 # 4. Calcula el área de un círculo con radio 4. Imprime el resultado.
 radio = 4
-area_circulo = 3.14 * (radio**2)
+area_circulo = pi * (radio**2)
 print("El área del círculo es:", area_circulo)
 # SUGERENCIA: Para mayor precisión se puede usar el módulo math:
 #   import math
@@ -29,8 +32,15 @@ print("El área del círculo es:", area_circulo)
 # Igualmente, usar 3.14 es válido para este ejercicio.  y aun no vimos modulo math, lo vamos a ver ahora.
 
 # 5. Pide al usuario que ingrese dos números y muestra la suma, resta, multiplicación y división de esos números.
-num_1 = int(input("Ingrese un número: "))
-num_2 = int(input("Ingrese otro número: "))
+num_1 = float(input("Ingrese un número: "))
+num_2 = float(input("Ingrese otro número: "))
+
+if num_2 != 0:
+    division = num_1 / num_2
+else:
+    division = "indefinido"
+    # Así evito el error al dividir por cero.
+
 print(
     "La suma da:",
     num_1 + num_2,
@@ -39,7 +49,7 @@ print(
     "\nLa multiplicación da:",
     num_1 * num_2,
     "\nLa división da:",
-    num_1 / num_2,
+    division,
 )
 # ATENCIÓN: Si num_2 es 0 el programa rompe con ZeroDivisionError.
 # Aún no se vio el condicional en esta unidad, así que para este ejercicio está bien,
@@ -61,7 +71,7 @@ print("El perímetro del triángulo es:", perimetro_triangulo)
 
 # 9. Pide al usuario que ingrese su nombre, edad y ciudad de residencia y luego imprime cada uno de esos datos con su respectivo tipo de dato.
 nombre = input("Ingrese su nombre: ")
-edad = input("Ingrese su edad: ")
+edad = int(input("Ingrese su edad: "))
 ciudad = input("Ingrese su ciudad de residencia: ")
 print(nombre, type(nombre))
 print(edad, type(edad))
@@ -69,6 +79,7 @@ print(ciudad, type(ciudad))
 # En este caso, todos los datos son strings porque la función input siempre devuelve un string.
 # ¡Muy buena observación! Ese comentario demuestra que entendiste cómo funciona input().
 # Como extra, la edad idealmente debería convertirse a int: edad = int(input(...)).
+# Con la corrección, ahora las variables nombre y ciudad son strings, mientras que la variable edad es un int.
 
 # 10. Realiza una operación matemática que involucre paréntesis, multiplicación, suma y resta. Guarda el resultado en una variable y luego imprímela junto con su tipo de dato.
 operacion = 450 - (20 * 5) + 25
