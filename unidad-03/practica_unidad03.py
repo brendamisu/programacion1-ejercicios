@@ -34,25 +34,29 @@ print(f"¡Hola, {nombre_usuario}! Tienes {edad_usuario} años")
 # Primera figura
 linea1 = "+" + ("*" * 15) + "+\n"
 linea2 = "*" + (" " * 15) + "*\n"
-print(linea1 + linea2*3 + linea1)
+print(linea1 + linea2 * 3 + linea1)
 
 # Segunda figura
 linea3 = "+" + ("-" * 3) + "+\n"
 linea4 = "|" + (" " * 3) + "|\n"
-print(linea3 + linea4*3 + linea3)
+print(linea3 + linea4 * 3 + linea3)
 
 # Tercera figura
 linea5 = ("#" * 35) + "\n"
 linea6 = ("#" * 2) + (" " * 31) + ("#" * 2) + "\n"
-print(linea5*2 + linea6*3 + linea5*2)
+print(linea5 * 2 + linea6 * 3 + linea5 * 2)
 
 
 # 3. Solicita al usuario que ingrese dos números enteros. Luego, convierte estos números a float, realiza la división de ambos y muestra el resultado.
 
 numero_1 = input("Ingrese un número entero: ")
 numero_2 = input("Ingrese otro número entero: ")
-division = float(numero_1) / float(numero_2)
-print(f"La división de ambos números es igual a: {division}")
+
+if float(numero_2) != 0:
+    division = float(numero_1) / float(numero_2)
+    print(f"La división de ambos números es igual a: {division}")
+else:
+    print("El resultado de la división es indefinido")
 # ATENCIÓN: Si el usuario ingresa 0 en el segundo número, se produce ZeroDivisionError.
 # Ya que en la unidad se ven los condicionales (ver ejercicio 11), podrías validarlo con
 # un if float(numero_2) != 0 para hacer el programa más robusto.
@@ -194,9 +198,9 @@ print(f"Su IMC es {imc}. Resultado: {res}")
 # 13. Conversión de unidades
 # Escribe un programa que convierta una temperatura dada en grados Celsius a grados Fahrenheit. La fórmula de conversión es `F = C * 9/5 + 32`. Pide al usuario que ingrese una temperatura en Celsius y muestra el resultado en Fahrenheit.
 
-Celsius = float(input("Ingrese una temperatura en Celsius: "))
-Fahrenheit = Celsius * 9/5 + 32
-print(f"La temperatura en Fahrenheit es: {Fahrenheit}")
+celsius = float(input("Ingrese una temperatura en Celsius: "))
+fahrenheit = celsius * 9/5 + 32
+print(f"La temperatura en Fahrenheit es: {fahrenheit}")
 
 
 # 14. Juego de adivinanza
@@ -247,10 +251,17 @@ Entrada: "hola" → "El dato representa una cadena de texto"
 """
 
 entrada = input("Ingrese un dato: ")
+
 if entrada.isdigit():
     print("El dato representa un número entero")
+elif entrada[0] == "-" and entrada[1:].isdigit():
+    print("El dato representa un número entero negativo")
+elif entrada.count(".") == 1 and entrada.replace(".", "").isdigit():
+    print("El dato representa un número flotante")
+elif entrada[0] == "-" and entrada.count(".") == 1 and entrada[1:].replace(".", "").isdigit():
+    print("El dato representa un número flotante negativo")
 else:
-    print("El dato no representa un número entero")
+    print("El dato representa una cadena de texto")
 # ⚠️ EJERCICIO INCOMPLETO: La consigna pedía distinguir entre:
 #   - Entero positivo
 #   - Entero negativo (primer carácter '-')
