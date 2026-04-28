@@ -1,4 +1,3 @@
-
 # 1. Solicita al usuario que ingrese su nombre y su edad. Luego, imprime un mensaje que diga "¡Hola, [nombre]! Tienes [edad] años".
 
 nombre_usuario = input("Ingrese su nombre: ")
@@ -199,7 +198,7 @@ print(f"Su IMC es {imc}. Resultado: {res}")
 # Escribe un programa que convierta una temperatura dada en grados Celsius a grados Fahrenheit. La fórmula de conversión es `F = C * 9/5 + 32`. Pide al usuario que ingrese una temperatura en Celsius y muestra el resultado en Fahrenheit.
 
 celsius = float(input("Ingrese una temperatura en Celsius: "))
-fahrenheit = celsius * 9/5 + 32
+fahrenheit = celsius * 9 / 5 + 32
 print(f"La temperatura en Fahrenheit es: {fahrenheit}")
 
 
@@ -224,7 +223,7 @@ else:
 
 """
 15. Identificación del tipo de dato
-Escribe un programa que tome una entrada del usuario usando input() y determine qué tipo de dato representa la cadena ingresada. 
+Escribe un programa que tome una entrada del usuario usando input() y determine qué tipo de dato representa la cadena ingresada.
 Ten en cuenta que input() siempre devuelve una cadena de texto (string), pero el usuario puede haber ingresado algo que representa un número.
 
 Tu programa debe analizar la entrada y determinar si representa:
@@ -258,7 +257,11 @@ elif entrada[0] == "-" and entrada[1:].isdigit():
     print("El dato representa un número entero negativo")
 elif entrada.count(".") == 1 and entrada.replace(".", "").isdigit():
     print("El dato representa un número flotante")
-elif entrada[0] == "-" and entrada.count(".") == 1 and entrada[1:].replace(".", "").isdigit():
+elif (
+    entrada[0] == "-"
+    and entrada.count(".") == 1
+    and entrada[1:].replace(".", "").isdigit()
+):
     print("El dato representa un número flotante negativo")
 else:
     print("El dato representa una cadena de texto")
@@ -289,7 +292,9 @@ else:
 calificacion_matematica = float(input("Ingrese su calificación en Matemática: "))
 calificacion_arte = float(input("Ingrese su calificación en Arte: "))
 calificacion_historia = float(input("Ingrese su calificación en Historia: "))
-promedio_calificaciones = (calificacion_matematica + calificacion_arte + calificacion_historia) / 3
+promedio_calificaciones = (
+    calificacion_matematica + calificacion_arte + calificacion_historia
+) / 3
 
 if promedio_calificaciones >= 6:
     print("El alumno aprobó")

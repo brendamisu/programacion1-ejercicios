@@ -29,6 +29,11 @@ elif valor > maximo:
     print("VALOR ALTO")
 else:
     print("VALOR MEDIO")
+# ¡Muy bien! Excelente uso del while con isdigit() para validar la entrada.
+# OBSERVACIÓN: isdigit() devuelve False para números negativos (ej. "-5") y
+# para decimales (ej. "3.14"), así que esos valores serían rechazados como "no número".
+# Para este ejercicio está perfecto porque trabajamos con enteros positivos,
+# pero tenelo en mente para casos donde se admitan negativos o decimales.
 
 
 """
@@ -58,6 +63,11 @@ if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
     print("El año es bisiesto")
 else:
     print("El año no es bisiesto")
+# ¡EXCELENTE! 🌟 Resolver el ejercicio de las dos formas demuestra que entendiste
+# muy bien la lógica detrás del problema. La segunda versión con operadores lógicos
+# (and / or) es más compacta y legible, mientras que la primera con if anidados
+# es más explícita y fácil de seguir paso a paso. Ambas son válidas y están bien
+# resueltas. ¡Muy buen trabajo de comparación!
 
 
 """
@@ -90,6 +100,18 @@ while numero_inicio + 1 < numero_fin:
     contador += 1
     numero_inicio += 1
 print("---" + "\nFin del programa.")
+# ¡Muy buena la validación inicial con while! Está perfecta.
+# OBSERVACIÓN sobre la condición del segundo while:
+# Tu interpretación es "los números ESTRICTAMENTE entre inicio y fin" (excluyendo ambos).
+# Por ejemplo, con inicio=1 y fin=5 muestra 3 bucles (los números 2, 3 y 4).
+# Es una interpretación válida de la consigna.
+# Otra forma más simple sería iterar incluyendo los extremos:
+#   contador = 1
+#   while numero_inicio <= numero_fin:
+#       print(f"Este es el bucle número {contador}")
+#       contador += 1
+#       numero_inicio += 1
+# Lo importante es que tu lógica es coherente y funciona. ¡Bien hecho!
 
 
 """
@@ -127,6 +149,11 @@ if promedio_notas >= 6:
         print("El alumno no aprobó el examen final y debe rendir un recuperatorio")
 else:
     print("El alumno no aprobó la cursada")
+# ¡EXCELENTE resolución! 👏 La estructura está muy bien pensada:
+#   - Calculás el promedio y lo informás.
+#   - Sólo pedís la nota del final si el alumno aprobó la cursada (con if anidado).
+#   - Distinguís correctamente entre "aprobó la materia" y "puede rendir recuperatorio".
+# Muy buen uso de condicionales anidados para evitar pedir datos innecesarios.
 
 
 """
@@ -163,6 +190,10 @@ elif a == 0 and b == 0:
 else:
     x = -b / a
     print(f"La ecuación tiene una solución: {x}")
+# ¡Muy bien! Cubriste los tres casos posibles de la ecuación de primer grado.
+# La lógica es clara: primero los casos especiales (a=0) y al final el caso general.
+# Pequeña sugerencia de estilo: como en el else ya sabemos que a != 0, no hace falta
+# verificar nada más. Está perfecto cómo lo dejaste.
 
 
 """
@@ -207,6 +238,16 @@ elif (b**2 - 4 * a * c) > 0:
 else:
     # Si el discriminante es menor a cero no existe solución real
     print("Sin solución real")
+# ¡EXCELENTE TRABAJO! 🌟 Este ejercicio es uno de los más complejos de la unidad
+# y lo resolviste muy bien. Cubriste TODOS los casos:
+#   ✔ Todos los números son solución (a=b=c=0)
+#   ✔ Sin solución (a=b=0, c≠0)
+#   ✔ Caso degenerado a primer grado (a=0, b≠0)
+#   ✔ Una solución (discriminante = 0)
+#   ✔ Dos soluciones (discriminante > 0)
+#   ✔ Sin solución real (discriminante < 0)
+# Además los comentarios que pusiste sobre el discriminante son muy claros y ayudan
+# a entender la lógica. ¡Muy buena prolijidad!
 
 
 """
@@ -234,6 +275,18 @@ elif respuesta == "C" or respuesta == "c":
     radio = float(input("Ingrese el radio: "))
     area_circulo = 3.141592 * radio**2
     print(f"El área del círculo es {area_circulo}")
+# ¡Muy bien! Buena validación con el while para asegurarte de que el usuario ingrese
+# una opción correcta antes de continuar.
+# SUGERENCIA de estilo: para no repetir tantas comparaciones se puede usar el método
+# .lower() o .upper() para normalizar la respuesta. Por ejemplo:
+#   respuesta = input("...").lower()
+#   while respuesta not in ("t", "c"):
+#       respuesta = input("Opción inválida...").lower()
+#   if respuesta == "t":
+#       ...
+#   elif respuesta == "c":
+#       ...
+# Pero tu solución es totalmente válida y funciona perfecto. ✔
 
 
 """
@@ -263,3 +316,38 @@ elif distancia31 < distancia32:
     print("El tercer número está más cerca del primero")
 else:
     print("El tercer número está más cerca del segundo")
+# ¡EXCELENTE! 👏 Resolviste el problema "a mano" calculando la distancia y
+# convirtiéndola a positiva con un if. Eso demuestra que entendiste muy bien
+# el concepto de valor absoluto.
+# Además contemplaste el caso de empate (misma distancia), que muchas veces se olvida.
+# DATO EXTRA: Python tiene una función llamada abs() que hace exactamente eso:
+#   distancia31 = abs(numero3 - numero1)
+#   distancia32 = abs(numero3 - numero2)
+# Pero hacerlo "manualmente" como vos demuestra que dominás la lógica. ¡Muy bien!
+
+
+# ============================================================
+# ¡FELICITACIONES, BRENDA! 🎉🌟✨
+# ============================================================
+# La práctica de la Unidad 4 está MUY BIEN resuelta. Se nota un gran avance
+# respecto de las unidades anteriores. Lo que se destaca:
+#
+#   ✔ Dominás el while para validar entradas del usuario (ej. 1, 3, 7).
+#   ✔ Usás los condicionales (if / elif / else) con mucha soltura.
+#   ✔ Sabés combinar operadores lógicos (and, or) y resolver el mismo problema
+#     de varias formas (ej. 2 con dos versiones distintas: ¡muy buena iniciativa!).
+#   ✔ Resolviste correctamente todos los casos de las ecuaciones de primer
+#     y segundo grado (ej. 5 y 6), que son los más complejos de la unidad.
+#   ✔ Aplicaste if anidados de forma natural cuando hizo falta (ej. 2 y 4).
+#   ✔ Los comentarios que vas dejando dentro del código (como en el ej. 6 sobre
+#     el discriminante, o en el ej. 8 sobre la distancia) muestran que entendés
+#     lo que estás haciendo, no copiás soluciones.
+#
+# Pequeños detalles para seguir creciendo:
+#   • Tener en cuenta las limitaciones de isdigit() (no admite negativos ni decimales).
+#   • Conocer funciones útiles del lenguaje como abs() o el método .lower(),
+#     que pueden simplificar el código en algunos casos.
+#
+# En conjunto: ¡un trabajo SOBRESALIENTE! 💪 Se nota el progreso desde la Unidad 2.
+# Vas por muy buen camino, seguí así. 🚀
+# ============================================================
